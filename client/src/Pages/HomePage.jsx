@@ -1,13 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { DebounceInput } from "react-debounce-input";
 import ArticlePreview from "../Components/ArticlePreview";
-import Article from "../Components/Article";
 function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [articles, setArticles] = useState([]);
-  const [offlineArticles, setOfflineArticles] = useState([]);
 
   const fetchArticles = async () => {
     const result = await axios.get(
@@ -36,10 +33,6 @@ function HomePage() {
       {articles.map((article) => (
         <div key={article.eid} className="article-item">
           <ArticlePreview article={article} />
-          <Link target="_blank" to={`/articles/page/${article.eid}`}>
-            อ่านต่อ
-          </Link>
-          <hr />
         </div>
       ))}
     </>

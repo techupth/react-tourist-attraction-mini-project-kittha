@@ -27,12 +27,12 @@ function Article() {
       setArticle(foundArticle);
     }
   }, [articleId]);
-  useEffect(() => {
-    console.log(article);
-  });
+  //   useEffect(() => {
+  //     console.log(article);
+  //   });
   return (
     <>
-      <p>{article.title}</p>
+      <h1 className="font-black">{article.title}</h1>
       <p>{article.description}</p>
       <p>
         {article.photos.map((photo, index) => (
