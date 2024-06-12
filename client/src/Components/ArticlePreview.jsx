@@ -16,7 +16,7 @@ function ArticlePreview(props) {
           <h1 className="font-black text-sky-400">
             <Link to={`/articles/page/${article.eid}`}>{article.title}</Link>
           </h1>
-          <p>{article.description.substr(0, 100)}</p>
+          <p>{article.description.substr(0, 100)}...</p>
           <Link
             className="text-blue-600 underline"
             target="_blank"
