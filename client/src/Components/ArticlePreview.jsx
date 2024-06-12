@@ -25,19 +25,21 @@ function ArticlePreview(props) {
             อ่านต่อ
           </Link>
           <br />
-          <div className="flex flex-row justify-start items-center gap-1 text-xs">
-            <span>หมวด </span>
-            {article.tags.map((tag, index) => (
-              <button
-                className="px-1 underline"
-                key={index}
-                onClick={() => handleAddInput({ tag })}
-              >
-                {tag}
-              </button>
-            ))}
+          <div className="flex flex-row justify-between items-center gap-1 text-xs">
+            <div>
+              <span className="font-semibold">หมวด </span>
+              {article.tags.map((tag, index) => (
+                <button
+                  className="px-1 underline"
+                  key={index}
+                  onClick={() => handleAddInput({ tag })}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
             <button
-              className="bg-sky-300  py-[5px] rounded-3xl"
+              className="bg-sky-300 hover:bg-sky-700 active:bg-sky-100 py-[5px] rounded-3xl"
               onClick={() => {
                 navigator.clipboard.writeText(article.url);
               }}
