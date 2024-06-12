@@ -47,7 +47,7 @@ function ArticlePreview(props) {
               Copy Link
             </button>
           </div>
-          <div className="flex justify-center flex-wrap mt-4">
+          <div className="flex justify-center flex-wrap md:justify-start mt-4">
             {article.photos.slice(1).map((photo, index) => (
               <img
                 key={index}
