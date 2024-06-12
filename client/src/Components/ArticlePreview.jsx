@@ -4,8 +4,8 @@ function ArticlePreview(props) {
   const handleAddInput = props.handleAddInput;
   return (
     <>
-      <div className="flex justify-around items-center p-4 gap-10">
-        <div className="w-3/5 h-[250px] flex flex-wrap">
+      <div className="flex justify-around items-center p-4 gap-8">
+        <div className="w-[375px] h-[250px] flex flex-wrap">
           <img
             src={article.photos[0]}
             className="p-2 rounded-3xl w1/3 relative aspect-w-1 aspect-h-1 w-full h-full object-cover"
@@ -39,7 +39,7 @@ function ArticlePreview(props) {
               ))}
             </div>
             <button
-              className="bg-sky-300 hover:bg-sky-700 active:bg-sky-100 py-[5px] rounded-3xl"
+              className="bg-sky-300 hover:bg-sky-700 active:bg-sky-100 w-10 h-10 rounded-full text-white"
               onClick={() => {
                 navigator.clipboard.writeText(article.url);
               }}
