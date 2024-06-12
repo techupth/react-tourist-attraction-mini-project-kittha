@@ -17,7 +17,6 @@ function Article() {
 
   useEffect(() => {
     const storedArticles = JSON.parse(localStorage.getItem("articles") || "[]");
-    // console.log(storedArticles);
 
     const foundArticle = storedArticles.find(
       (article) => article.eid === articleId
@@ -27,16 +26,13 @@ function Article() {
       setArticle(foundArticle);
     }
   }, [articleId]);
-  //   useEffect(() => {
-  //     console.log(article);
-  //   });
   return (
     <>
       <h1 className="font-black text-3xl text-center p-4">{article.title}</h1>
       <p className="p-4">{article.description}</p>
-      <div className="flex flex-col items-center gap-5 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:place-items-center gap-4 p-4">
         {article.photos.map((photo, index) => (
-          <img className="w-[250px]" key={index} src={photo} />
+          <img className="w-[400px]" key={index} src={photo} />
         ))}
       </div>
       <div className="flex justify-center">
