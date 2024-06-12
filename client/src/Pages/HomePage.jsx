@@ -13,12 +13,10 @@ function HomePage() {
         `http://localhost:4001/trips?keywords=${searchQuery}`
       );
       if (result.status === 200) {
-        // console.log("response 200");
         setArticles(result.data.data);
       }
     } catch (error) {
       // console.error(error);
-      // console.log("status offline - init using cache");
       setArticles(storedArticles);
     }
   };
