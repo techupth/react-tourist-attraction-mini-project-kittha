@@ -24,7 +24,6 @@ function ArticlePreview(props) {
           >
             อ่านต่อ
           </Link>
-          <br />
           <div className="flex flex-row justify-between items-center gap-1 text-xs">
             <div>
               <span className="font-semibold">หมวด </span>
@@ -39,7 +38,7 @@ function ArticlePreview(props) {
               ))}
             </div>
             <button
-              className="bg-sky-300 hover:bg-sky-700 active:bg-sky-100 w-10 h-10 rounded-full text-white"
+              className=" bg-sky-300 hover:bg-sky-700 active:bg-sky-100 w-10 h-10 rounded-full text-white"
               onClick={() => {
                 navigator.clipboard.writeText(article.url);
               }}
