@@ -5,13 +5,13 @@ function ArticlePreview(props) {
   return (
     <>
       <div className="flex justify-around items-center p-4 gap-10">
-        <div className="w-[475px] h-[250px] flex flex-wrap">
+        <div className="w-3/5 h-[250px] flex flex-wrap">
           <img
             src={article.photos[0]}
             className="p-2 rounded-3xl w1/3 relative aspect-w-1 aspect-h-1 w-full h-full object-cover"
           />
         </div>
-        <div className="flex-col w-[475px]">
+        <div className="flex-col w-[500px]">
           {" "}
           <h1 className="font-black">
             <Link to={`/articles/page/${article.eid}`}>{article.title}</Link>
@@ -25,16 +25,26 @@ function ArticlePreview(props) {
             อ่านต่อ
           </Link>
           <br />
-          <span>หมวด </span>
-          {article.tags.map((tag, index) => (
+          <div className="flex flex-row justify-start items-center gap-1 text-xs">
+            <span>หมวด </span>
+            {article.tags.map((tag, index) => (
+              <button
+                className="px-1 underline"
+                key={index}
+                onClick={() => handleAddInput({ tag })}
+              >
+                {tag}
+              </button>
+            ))}
             <button
-              className="px-1 underline"
-              key={index}
-              onClick={() => handleAddInput({ tag })}
+              className="bg-sky-300  py-[5px] rounded-3xl"
+              onClick={() => {
+                navigator.clipboard.writeText(article.url);
+              }}
             >
-              {tag}
+              Copy Link
             </button>
-          ))}
+          </div>
           <div className="flex">
             {article.photos.slice(1).map((photo, index) => (
               <img

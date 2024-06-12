@@ -36,12 +36,7 @@ function Article() {
       <p className="p-4">{article.description}</p>
       <div className="flex flex-col items-center gap-5 p-4">
         {article.photos.map((photo, index) => (
-          <img
-            className="w-[250px]"
-            key={index}
-            src={photo}
-            alt={`Photo ${index + 1}`}
-          />
+          <img className="w-[250px]" key={index} src={photo} />
         ))}
       </div>
       <div className="flex justify-center">
