@@ -5,18 +5,29 @@ import ArticlePreview from "../Components/ArticlePreview";
 function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [articles, setArticles] = useState([]);
+  const storedArticles = JSON.parse(localStorage.getItem("articles") || "[]");
 
   const fetchArticles = async () => {
-    const result = await axios.get(
-      `http://localhost:4001/trips?keywords=${searchQuery}`
-    );
-    setArticles(result.data.data);
+    try {
+      const result = await axios.get(
+        `http://localhost:4001/trips?keywords=${searchQuery}`
+      );
+      if (result.status === 200) {
+        // console.log("response 200");
+        setArticles(result.data.data);
+      }
+    } catch (error) {
+      // console.error(error);
+      // console.log("status offline - init using cache");
+      setArticles(storedArticles);
+    }
   };
 
   const handleAddInput = (textInput) => {
     const newTextInputString = searchQuery + "\n" + textInput.tag + " ";
     setSearchQuery(newTextInputString);
   };
+
   useEffect(() => {
     fetchArticles();
   }, [searchQuery]);
