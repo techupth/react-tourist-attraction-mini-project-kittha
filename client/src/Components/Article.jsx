@@ -28,7 +28,9 @@ function Article() {
   }, [articleId]);
   return (
     <>
-      <h1 className="font-black text-3xl text-center p-4">{article.title}</h1>
+      <h1 className="text-sky-400 font-semibold text-3xl text-center p-4">
+        <a href={article.url}>{article.title}</a>
+      </h1>
       <p className="p-4">{article.description}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:place-items-center gap-4 p-4">
         {article.photos.map((photo, index) => (
