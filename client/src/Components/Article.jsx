@@ -27,6 +27,7 @@ function Article() {
       setArticle(foundArticle);
     }
   }, [articleId]);
+
   return (
     <>
       <div className="p-6">
@@ -35,7 +36,7 @@ function Article() {
             {article.title}
           </a>
         </h1>
-        <p className="p-4">{article.description}</p>
+        <p className="p-4 whitespace-pre-line">{article.description}</p>
         <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
           {article.photos.map((photo, index) => (
             <ModalImage
