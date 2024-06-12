@@ -32,7 +32,7 @@ function HomePage() {
           <p className="text-left">ค้นหาที่เที่ยว</p>
         </div>
         <DebounceInput
-          className="p-2 my-4 border border-gray-400 rounded w-4/5"
+          className="p-2 my-4 outline-none border-b-2 w-4/5"
           type="text"
           debounceTimeout={300}
           value={searchQuery}
