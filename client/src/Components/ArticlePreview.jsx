@@ -18,7 +18,7 @@ function ArticlePreview(props) {
           </h1>
           <p>{article.description.substr(0, 100)}...</p>
           <Link
-            className="text-blue-600 underline"
+            className="text-sky-400 underline"
             target="_blank"
             to={`/articles/page/${article.eid}`}
           >
