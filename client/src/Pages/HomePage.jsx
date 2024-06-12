@@ -41,11 +41,17 @@ function HomePage() {
           }}
           placeholder="หาที่เที่ยวแล้วไปกัน"
         />
-        {articles.map((article) => (
-          <div key={article.eid} className="article-item">
-            <ArticlePreview article={article} handleAddInput={handleAddInput} />
-          </div>
-        ))}
+        <div>
+          {articles.map((article) => (
+            <div key={article.eid} className="article-item">
+              {/* {console.log("I'm re-render!")} */}
+              <ArticlePreview
+                article={article}
+                handleAddInput={handleAddInput}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
