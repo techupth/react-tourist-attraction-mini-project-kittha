@@ -17,7 +17,6 @@ function Article() {
 
   useEffect(() => {
     const storedArticles = JSON.parse(localStorage.getItem("articles") || "[]");
-    // console.log(storedArticles);
 
     const foundArticle = storedArticles.find(
       (article) => article.eid === articleId
@@ -27,9 +26,6 @@ function Article() {
       setArticle(foundArticle);
     }
   }, [articleId]);
-  //   useEffect(() => {
-  //     console.log(article);
-  //   });
   return (
     <>
       <h1 className="font-black text-3xl text-center p-4">{article.title}</h1>
