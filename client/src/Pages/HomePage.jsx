@@ -44,7 +44,6 @@ function HomePage() {
         <div>
           {articles.map((article) => (
             <div key={article.eid} className="article-item">
-              {/* {console.log("I'm re-render!")} */}
               <ArticlePreview
                 article={article}
                 handleAddInput={handleAddInput}
