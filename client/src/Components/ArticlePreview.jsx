@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
+import ModalImage from "react-modal-image";
 function ArticlePreview(props) {
   const article = props.article;
   const handleAddInput = props.handleAddInput;
   return (
     <>
       <div className="flex flex-col mb-12 md:flex-row justify-around items-center p-4 gap-8">
-        <div className="w-full md:w-[375px] h-[250px] flex flex-wrap">
-          <img
-            src={article.photos[0]}
-            className="p-2 rounded-3xl w-full h-full object-cover"
+        <div className="w-full md:w-[375px] h-[250px] flex flex-wrap justify-center items-center overflow-hidden rounded-3xl relative">
+          <ModalImage
+            small={article.photos[0]}
+            medium={article.photos[0]}
+            large={article.photos[0]}
+            className="p-2 rounded-3xl w-full h-full object-cover object-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            hideDownload={true}
+            hideZoom={true}
           />
         </div>
         <div className="flex flex-col w-full md:w-[500px]">
@@ -48,10 +53,14 @@ function ArticlePreview(props) {
           </div>
           <div className="flex justify-center flex-wrap md:justify-start mt-4">
             {article.photos.slice(1).map((photo, index) => (
-              <img
+              <ModalImage
                 key={index}
-                src={photo}
+                small={photo}
+                medium={photo}
+                large={photo}
                 className="h-20 w-20 object-cover p-2 rounded-3xl md:h-32 md:w-32"
+                hideDownload={true}
+                hideZoom={true}
               />
             ))}
           </div>
