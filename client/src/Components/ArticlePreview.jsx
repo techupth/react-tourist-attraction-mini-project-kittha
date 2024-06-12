@@ -6,7 +6,7 @@ function ArticlePreview(props) {
   return (
     <>
       <div className="flex flex-col mb-12 md:flex-row justify-around items-center p-4 gap-8">
-        <div className="w-full md:w-[375px] h-[250px] flex flex-wrap justify-center items-center overflow-hidden rounded-3xl relative">
+        <div className="w-full md:w-[375px] h-[250px] flex flex-wrap overflow-hidden rounded-3xl relative">
           <ModalImage
             small={article.photos[0]}
             medium={article.photos[0]}
