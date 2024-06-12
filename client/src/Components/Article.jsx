@@ -32,14 +32,27 @@ function Article() {
   //   });
   return (
     <>
-      <h1 className="font-black">{article.title}</h1>
-      <p>{article.description}</p>
-      <p>
+      <h1 className="font-black text-3xl text-center p-4">{article.title}</h1>
+      <p className="p-4">{article.description}</p>
+      <div className="flex flex-col items-center gap-5 p-4">
         {article.photos.map((photo, index) => (
-          <img key={index} src={photo} alt={`Photo ${index + 1}`} />
+          <img
+            className="w-[250px]"
+            key={index}
+            src={photo}
+            alt={`Photo ${index + 1}`}
+          />
         ))}
-      </p>
-      <button onClick={() => navigate("/")}> Back to Home Page</button>
+      </div>
+      <div className="flex justify-center">
+        <button
+          className="m-4 p-4 bg-sky-400 rounded-3xl"
+          onClick={() => navigate("/")}
+        >
+          {" "}
+          Back to Home Page
+        </button>
+      </div>
     </>
   );
 }
