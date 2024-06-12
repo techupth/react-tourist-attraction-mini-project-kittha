@@ -13,7 +13,7 @@ function ArticlePreview(props) {
         </div>
         <div className="flex-col w-[500px]">
           {" "}
-          <h1 className="font-black">
+          <h1 className="font-black text-sky-400">
             <Link to={`/articles/page/${article.eid}`}>{article.title}</Link>
           </h1>
           <p>{article.description.substr(0, 100)}</p>

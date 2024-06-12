@@ -14,7 +14,8 @@ function HomePage() {
   };
 
   const handleAddInput = (textInput) => {
-    const newTextInputString = searchQuery.concat(" ", textInput.tag);
+    // const newTextInputString = searchQuery.concat(", ", textInput.tag);
+    const newTextInputString = searchQuery + "\n" + textInput.tag + " ";
     setSearchQuery(newTextInputString);
   };
   useEffect(() => {
