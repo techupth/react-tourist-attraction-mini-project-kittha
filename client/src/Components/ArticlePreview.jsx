@@ -4,14 +4,14 @@ function ArticlePreview(props) {
   const handleAddInput = props.handleAddInput;
   return (
     <>
-      <div className="flex justify-around items-center p-4 gap-8">
-        <div className="w-[375px] h-[250px] flex flex-wrap">
+      <div className="flex flex-col mb-12 md:flex-row justify-around items-center p-4 gap-8">
+        <div className="w-full md:w-[375px] h-[250px] flex flex-wrap">
           <img
             src={article.photos[0]}
-            className="p-2 rounded-3xl w1/3 relative aspect-w-1 aspect-h-1 w-full h-full object-cover"
+            className="p-2 rounded-3xl w-full h-full object-cover"
           />
         </div>
-        <div className="flex-col w-[500px]">
+        <div className="flex flex-col w-full md:w-[500px]">
           {" "}
           <h1 className="font-black text-sky-400">
             <Link to={`/articles/page/${article.eid}`}>{article.title}</Link>
@@ -47,16 +47,17 @@ function ArticlePreview(props) {
               Copy Link
             </button>
           </div>
-          <div className="flex">
+          <div className="flex justify-center flex-wrap mt-4">
             {article.photos.slice(1).map((photo, index) => (
               <img
                 key={index}
                 src={photo}
-                className="h-32 object-cover p-2 rounded-3xl w-32"
+                className="h-20 w-20 object-cover p-2 rounded-3xl md:h-32 md:w-32"
               />
             ))}
           </div>
           <br />
+          <hr className="w-full md:hidden" />
         </div>
       </div>
     </>

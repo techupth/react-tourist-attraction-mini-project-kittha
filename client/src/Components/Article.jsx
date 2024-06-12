@@ -37,7 +37,7 @@ function Article() {
       </div>
       <div className="flex justify-center">
         <button
-          className="m-4 p-4 bg-sky-400 hover:bg-sky-700 active:bg-sky-100 rounded-3xl"
+          className="m-4 p-4 bg-sky-400 hover:bg-sky-700 active:bg-sky-100 rounded-3xl text-white"
           onClick={() => navigate("/")}
         >
           {" "}
